@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  p Pusher Chat Simple
+    form(method='POST')
+      br
+      |     Enter your nick name:
+      br
+      input#username(type='text', name='username', placeholder='Nick name')
+      br
+      input(type='submit', value='Login')

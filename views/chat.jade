@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  script(src='https://js.pusher.com/3.0/pusher.min.js')
+  script(src='/bower_components/jquery/dist/jquery.js')
+  script(src="/javascripts/chat.js")
+  script.
+      // Enable pusher logging - don't include this in production
+      Pusher.log = function(message) {
+        if (window.console && window.console.log) {
+          window.console.log(message);
+        }
+      };
+      var pusher = new Pusher('a23a160d93f93ade6019', {
+        encrypted: true
+      });
+      var channel = pusher.subscribe('test_channel');
+      channel.bind('my_event', function(data) {
+        var node = document.createElement("p");
+        var textnode = document.createTextNode(data.username + " : " + data.message);
+        node.appendChild(textnode);
+        document.getElementById('room').appendChild(node);
+      });
+  p Chat Room
+    br
+    |   Welcome :
+    b(id='username') #{username}
+    a(href='/chat/logout')  Log Out
+    div
+      input(type='text', id='message', name='message', placeholder='Your message')
+      input(type='submit', value='Send' onclick="postMessage()")
+    #room
