@@ -10,9 +10,7 @@ Use the npm init command to create a package.json file for your application. For
 
 $ npm init
 
-This command will prompt your for a number of things such as the name and version of your application. For now, you can simply hit RETURN to accept the defaults for most of them, except for:
-
-entry point: (index.js)
+This command will prompt your for a number of things such as the name and version of your application. For now, you can simply hit RETURN to accept the defaults for most of them, except for: entry point: (index.js)
 
 Enter app.js or whatever you want the name of the main file to be. If you want it to be index.js, hit RETURN to accept the suggested default file name.
 
@@ -57,23 +55,6 @@ For example, the following creates an Express app named pusher_chat_simple in th
 
 $ express pusher_chat_simple
 
-   create : pusher_chat_simple
-   create : pusher_chat_simple/package.json
-   create : pusher_chat_simple/app.js
-   create : pusher_chat_simple/public
-   create : pusher_chat_simple/public/javascripts
-   create : pusher_chat_simple/public/images
-   create : pusher_chat_simple/routes
-   create : pusher_chat_simple/routes/index.js
-   create : pusher_chat_simple/routes/users.js
-   create : pusher_chat_simple/public/stylesheets
-   create : pusher_chat_simple/public/stylesheets/style.css
-   create : pusher_chat_simple/views
-   create : pusher_chat_simple/views/index.jade
-   create : pusher_chat_simple/views/layout.jade
-   create : pusher_chat_simple/views/error.jade
-   create : pusher_chat_simple/bin
-   create : pusher_chat_simple/bin/www
 Then install dependencies:
 
 $ cd pusher_chat_simple
@@ -88,25 +69,3 @@ On Windows, use this command:
 
 > set DEBUG=pusher_chat_simple:* & npm start
 Then load http://localhost:3000/ in your browser to access the app.
-
-The generated app directory structure looks like the following.
-
-.
-├── app.js
-├── bin
-│   └── www
-├── package.json
-├── public
-│   ├── images
-│   ├── javascripts
-│   └── stylesheets
-│       └── style.css
-├── routes
-│   ├── index.js
-│   └── users.js
-└── views
-    ├── error.jade
-    ├── index.jade
-    └── layout.jade
-
-7 directories, 9 files
